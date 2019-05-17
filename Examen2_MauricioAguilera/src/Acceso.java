@@ -23,6 +23,16 @@ public class Acceso extends javax.swing.JFrame {
         usuarios.add(new Usuarios(1+r.nextInt(9999), "Maria", "Lagos", 19, false));
         usuarios.add(new Usuarios(1+r.nextInt(9999), "Oscar", "Hermanadez", 19, false));
         libros.add(new Libros("Juan Perez", "Depresion", "Falta de esperanza", "Unitec", "Ingles", "4746-3634-6574", "Disponible", "Mauricio", new Date(), new Date(), 4636));
+        libros.add(new Libros("Juan Perez", "Depresion", "Falta de esperanza", "Unitec", "Ingles", "4746-7634-6574", "Disponible", "Mauricio", new Date(), new Date(), 4636));
+        libros.add(new Libros("Juan Perez", "Depresion", "Falta de esperanza", "Unitec", "Ingles", "4746-3634-6574", "Disponible", "Mauricio", new Date(), new Date(), 4636));
+        libros.add(new Libros("Juan Perez", "Depresion", "Falta de esperanza", "Unitec", "Ingles", "4746-3634-6574", "Disponible", "Mauricio", new Date(), new Date(), 4636));
+        libros.add(new Libros("Juan Perez", "Depresion", "Falta de esperanza", "Unitec", "Ingles", "4746-3634-6626", "Disponible", "Mauricio", new Date(), new Date(), 4636));
+        libros.add(new Libros("Juan Perez", "Depresion", "Falta de esperanza", "Unitec", "Ingles", "4486-3634-6574", "Disponible", "Mauricio", new Date(), new Date(), 4636));
+        libros.add(new Libros("Juan Perez", "Depresion", "Falta de esperanza", "Unitec", "Ingles", "4746-5824-6574", "Disponible", "Mauricio", new Date(), new Date(), 4636));
+        libros.add(new Libros("Juan Perez", "Depresion", "Falta de esperanza", "Unitec", "Ingles", "4746-3634-6944", "Disponible", "Mauricio", new Date(), new Date(), 4636));
+        libros.add(new Libros("Juan Perez", "Depresion", "Falta de esperanza", "Unitec", "Ingles", "4746-2754-6574", "Disponible", "Mauricio", new Date(), new Date(), 4636));
+        libros.add(new Libros("Juan Perez", "Depresion", "Falta de esperanza", "Unitec", "Ingles", "4696-3634-6574", "Disponible", "Mauricio", new Date(), new Date(), 4636));
+        
     }
     
     public Acceso(ArrayList <Usuarios> usuarios, ArrayList <Libros> libros) {

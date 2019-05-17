@@ -68,6 +68,7 @@ public class Administrador extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tabla1 = new javax.swing.JTable();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -190,14 +191,14 @@ public class Administrador extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Autor", "Titulo", "Genero", "Editorial", "Idioma", "Año escrito", "ISBN", "Año ingresado", "Persona prestada", "Numero de cuenta"
+                "Autor", "Titulo", "Genero", "Editorial", "Idioma", "ISBN", "Estado", "Persona prestada", "N. Cuenta", "Año escrito", "Año ingreasado"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class, java.lang.String.class, java.lang.Object.class, java.lang.String.class, java.lang.Integer.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class, java.lang.String.class, java.lang.Object.class, java.lang.Object.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, false, false, true
+                false, false, false, false, false, false, false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -210,13 +211,23 @@ public class Administrador extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(tabla1);
 
+        jButton1.setFont(new java.awt.Font("Imprint MT Shadow", 0, 14)); // NOI18N
+        jButton1.setText("Actualizar");
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton1MouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(24, 24, 24)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 628, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 628, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(54, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -224,7 +235,9 @@ public class Administrador extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(54, 54, 54)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(93, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(36, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Inventario", jPanel2);
@@ -269,6 +282,10 @@ public class Administrador extends javax.swing.JFrame {
     }//GEN-LAST:event_bt_agregarMouseClicked
 
     private void jPanel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel2MouseClicked
+        
+    }//GEN-LAST:event_jPanel2MouseClicked
+
+    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
         for (int i = 0; i < libros.size(); i++) {
             Libros s = libros.get(i);
             Object[] newrow= {
@@ -280,15 +297,15 @@ public class Administrador extends javax.swing.JFrame {
                 s.getISBN(),
                 s.getEstado(),
                 s.getNombre(),
+                s.getCuenta(),
                 s.getAnioescrito(),
-                s.getAnioingresado(),
-                s.getCuenta()
+                s.getAnioingresado()
             };
             DefaultTableModel modelo = (DefaultTableModel) tabla1.getModel();
             modelo.addRow(newrow);
             tabla1.setModel(modelo);
         }
-    }//GEN-LAST:event_jPanel2MouseClicked
+    }//GEN-LAST:event_jButton1MouseClicked
 
     /**
      * @param args the command line arguments
@@ -329,6 +346,7 @@ public class Administrador extends javax.swing.JFrame {
     private javax.swing.JButton bt_agregar;
     private javax.swing.JComboBox<String> cb_idioma;
     private com.toedter.calendar.JDateChooser dc_escrito;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
