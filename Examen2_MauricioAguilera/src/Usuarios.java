@@ -7,17 +7,20 @@ public class Usuarios {
     private String nombre;
     private String apellido;
     private int edad;
-    ArrayList <Libros> predtados = new ArrayList();
+    private boolean permiso;
+    ArrayList <Libros> prestados = new ArrayList();
     ArrayList <Libros> historial = new ArrayList();
 
     public Usuarios() {
     }
-
-    public Usuarios(int codigo, String nombre, String apellido, int edad) {
+    
+    
+    public Usuarios(int codigo, String nombre, String apellido, int edad, boolean permiso) {
         this.codigo = codigo;
         this.nombre = nombre;
         this.apellido = apellido;
         this.edad = edad;
+        this.permiso = permiso;
     }
 
     public int getCodigo() {
@@ -52,14 +55,23 @@ public class Usuarios {
         this.edad = edad;
     }
 
-    public ArrayList<Libros> getPredtados() {
-        return predtados;
+    public boolean isPermiso() {
+        return permiso;
     }
 
-    public void setPredtados(ArrayList<Libros> predtados) {
-        this.predtados = predtados;
+    public void setPermiso(boolean permiso) {
+        this.permiso = permiso;
     }
 
+    public ArrayList<Libros> getPrestados() {
+        return prestados;
+    }
+
+    public void setPrestados(ArrayList<Libros> prestados) {
+        this.prestados = prestados;
+    }
+    
+    
     public ArrayList<Libros> getHistorial() {
         return historial;
     }
@@ -70,7 +82,7 @@ public class Usuarios {
 
     @Override
     public String toString() {
-        return "Usuarios{" + "codigo=" + codigo + ", nombre=" + nombre + ", apellido=" + apellido + ", edad=" + edad + ", predtados=" + predtados + ", historial=" + historial + '}';
+        return "Usuarios{" + "codigo=" + codigo + ", nombre=" + nombre + ", apellido=" + apellido + ", edad=" + edad + ", predtados=" + prestados + ", historial=" + historial + '}';
     }
 
     
